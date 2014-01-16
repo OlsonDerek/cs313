@@ -1,0 +1,5 @@
+C:\Users\Derek\Documents\Visual Studio 2012\Projects\CS313\CS313\bin\CS313.dll
+C:\Users\Derek\Documents\Visual Studio 2012\Projects\CS313\CS313\bin\CS313.pdb
+C:\Users\Derek\Documents\Visual Studio 2012\Projects\CS313\CS313\obj\Debug\CS313.csprojResolveAssemblyReference.cache
+C:\Users\Derek\Documents\Visual Studio 2012\Projects\CS313\CS313\obj\Debug\CS313.dll
+C:\Users\Derek\Documents\Visual Studio 2012\Projects\CS313\CS313\obj\Debug\CS313.pdb
