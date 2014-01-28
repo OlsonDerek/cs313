@@ -7,12 +7,12 @@ if($_COOKIE['voted'] == 'true')
 
 
 <html>
-        <head>
-                <link rel="stylesheet" type="text/css" href="../css/master.css">
-            <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-            <script src="../js/main.js"></script>
-                <title>Survey</title>
-        </head>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/master.css">
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+		<script src="../js/main.js"></script>
+		<title>Survey</title>
+    </head>
         <body class="background">
                 <div class="col-md-8 col-md-offset-2 survey">
                         <div class="row">

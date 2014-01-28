@@ -4,7 +4,7 @@
 setcookie('voted', 'true', time() + 1000000);
 
 // write the results to the file
-$file = file_get_contents('metrics.txt');
+$file = file_get_contents('_results.txt');
 
 // make an array so we can manipulate some stuff in the file
 $array = explode(";", $file);
@@ -25,7 +25,7 @@ for ($i = 0; $i < $count; $i++) {
 
 $file = implode(";", $array);
 
-file_put_contents('metrics.txt', $file);
+file_put_contents('_results.txt', $file);
 
 header('Location: http://dokinetix.com/Survey/results.php');
 
