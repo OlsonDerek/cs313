@@ -4,6 +4,12 @@
 	include 'process.php';
 	$catID = $_GET['id'];
 	$catID += 0;
+	if(!isset($_SESSION['signed_in']) && $_SESSION['signed_in'] != true)
+	{
+		header('Location: http://www.dokinetix.com/Forum/signup.php');
+
+	}
+
 ?>
 <!-- Begin Content -->
             <div class="dvMainContent border">
@@ -24,7 +30,7 @@
 				</tr>
 				<?php getPosts($catID) ?>
 			</table>
-		<form id="postForm class="form-horizontal" role="form" action="makePost($catID, $)" method="post">
+		<form id="postForm class="form-horizontal" role="form" method="post">
 			Post:<br>
 			<textarea id="post" name="post" value="make a post" rows="5" cols="60"></textarea><br><br>
 			<div class="col-sm-12 controls">

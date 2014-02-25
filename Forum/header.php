@@ -30,7 +30,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">Derek Olson's Home Page</a>
+            <a class="navbar-brand" href="http://dokinetix.com">Derek Olson's Home Page</a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -38,8 +38,21 @@
             <ul class="nav navbar-nav">
               <li class="active"><a href="assignments.html">Assignments</a></li>          
             </ul>
+		<?php
+		if(isset($_SESSION['signed_in']) && $_SESSION['signed_in'] == true){
+			echo '<ul class="nav navbar-nav navbar-right">';
+				echo '<li id="signout"><a href="signout.php">Sign Out</a></li>';
+			echo '</ul>';
+		}
+		else
+		{
+			echo '<ul class="nav navbar-nav navbar-right">';
+				echo '<li id="signin"><a href="signup.php">Sign In</a></li>';              
+			echo '</ul>';
+		}
+		?>
             <ul class="nav navbar-nav navbar-right">
-		<li id="loggedin">Logged in as: <?php echo $loggedIn; ?></li>              
+		<li id="loggedin"><a>Logged in as: <?php echo $loggedIn; ?></a></li>              
             </ul>
           </div><!-- /.navbar-collapse -->
         </nav>

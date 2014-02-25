@@ -28,7 +28,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
             {
                 if(mysql_num_rows($result) != 1)
                 {
-                    echo 'wrong';
+			echo 'wrong';                    
                 }
                 else
                 {

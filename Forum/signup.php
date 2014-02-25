@@ -146,7 +146,7 @@
                     switch(data){
 			case 'success':
 				alert('Success!');
-				//window.location = "http://dokinetix.com/Forum/forum.html";
+				window.location = "http://dokinetix.com/Forum/forum.php";
 				break;
 			case 'fail':
 				alert('Something went wrong while signing in. Please try again later.');
@@ -168,7 +168,10 @@
                     datatype: "html",
                     data: dataString,
                     success: function (data) {
-                        document.getElementById('loggedin').innerHTML = "Logged in as: " + data;
+			if(data == 'success')
+			{
+                        document.getElementById('loggedin').innerHTML = "<a>Logged in as: " + data + "</a>";
+			}
                     }
                 });
 		}
