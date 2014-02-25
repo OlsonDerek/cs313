@@ -1,4 +1,4 @@
-﻿body {
+body {
     background-color:#FFFFF0;
     background-image: url(Images/Peru.jpg);
     background-repeat: no-repeat;
@@ -110,3 +110,24 @@ html, body {
 .soft {
     opacity: .9;
 }
+
+.post-table, .post-th, .post-td, .post-user, .post-date, .post
+{
+	border: 1px solid black;
+}
+
+.post
+{
+	width: 500px;
+}
+
+.post-user
+{
+	width: 100px;
+}
+
+.post-date
+{
+	width: 100px;
+}
+

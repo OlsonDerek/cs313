@@ -6,7 +6,7 @@
                 echo "Results<br/>";
 
         //        get the results from the file and display them
-        $file = file_get_contents('metrics.txt');
+        $file = file_get_contents('_results.txt');
 
 
         $array = explode(";", $file);

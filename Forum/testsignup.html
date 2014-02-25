@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Derek Olson's Home Page</title>
+        <script src="../Bootstrap/js/jquery-2.0.3.js"></script>
+        <script src="../Bootstrap/js/bootstrap.js"></script>
+        <link rel="shortcut icon" href="../Images/Spiderman.ico"/>
+        <link rel="stylesheet" type="text/css" href="../313.css" />
+        <link rel="stylesheet" type="text/css" href="../Bootstrap/css/bootstrap.css" />
+        <style type="text/css"/>
+    </head>
+    <body>
+        <div class="container">    
+        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+            <div class="panel panel-info" >
+                <div class="panel-heading">
+                    <div class="panel-title">Sign In</div>                   
+                </div>     
+                <div style="padding-top:30px" class="panel-body" >
+                    <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>                            
+                    <form id="loginform" class="form-horizontal" role="form">                                    
+                        <div style="margin-bottom: 25px" class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email"/>                                        
+                                </div>                                
+                        <div style="margin-bottom: 25px" class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                    <input id="login-password" type="password" class="form-control" name="password" placeholder="password"/>
+                                </div>
+                            <div style="margin-top:10px" class="form-group">
+                                <!-- Button -->
+                                <div class="col-sm-12 controls">
+                                    <a id="btn-login" href="#" class="btn btn-success">Login  </a>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12 control">
+                                    <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                                        Don't have an account? 
+                                    <a href="#" onclick="$('#loginbox').hide(); $('#signupbox').show()">
+                                        Sign Up Here
+                                    </a>
+                                    </div>
+                                </div>
+                            </div>    
+                        </form>     
+                    </div>                     
+                </div>  
+    </div>
+    <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="panel-title">Sign Up</div>
+                        <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a></div>
+                    </div>  
+                    <div class="panel-body" >
+                        <form id="signupform" class="form-horizontal" role="form" method="post" action="signup.php">
+                                
+                            <div id="signupalert" style="display:none" class="alert alert-danger">
+                                <p>Error:</p>
+                                <span></span>
+                            </div>    
+                                  
+                            <div class="form-group">
+                                <label for="email" class="col-md-3 control-label">Email</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="user_email" placeholder="Email Address" id="useremail"/>
+                                </div>
+                            </div>
+                                    
+                            <div class="form-group">
+                                <label for="username" class="col-md-3 control-label">Username</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="user_name" placeholder="Username" id="username"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="col-md-3 control-label">Password</label>
+                                <div class="col-md-9">
+                                    <input type="password" class="form-control" name="user_pass" placeholder="Password" id="password"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="repassword" class="col-md-3 control-label">Confrim Password</label>
+                                <div class="col-md-9">
+                                    <input type="password" class="form-control" name="user_pass_check" placeholder="Confirm Password" id="repassword"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Button -->                                        
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button id="btn-signup" type="button" class="btn btn-info" onclick="singup();"><i class="icon-hand-right"></i> &nbsp Sign Up</button>  
+                                </div>
+                            </div>
+                        </form>
+                        </div>
+                </div>
+         </div>
+    <script type="text/javascript">
+        function signup() {
+            var username = document.getElementById('username').value;
+            var email = document.getElementById('useremail').value;
+            var password = $get('password').value;
+            var repassword = $get('repassword').value;
+            if (password != repassword) {
+                alert("Passwords don't match!");
+                return false;
+            }
+            $.ajax({
+                type: "POST",
+                url: "signup.php",
+                datatype: "html",
+                data: {
+                    user_name: username,
+                    user_pass: password,
+                    user_email: email
+                },
+                success: function () {
+                    alert("Successfully registered!");
+                }                
+            });
+        }
+    </script>
+</body>
+
+</html>
